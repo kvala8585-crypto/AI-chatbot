@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # 🤖 AI Chatbot Automation System
 
 ## 📌 Project Overview
