@@ -1,90 +1,36 @@
-<<<<<<< HEAD
-from langchain_openai import ChatOpenAI
-from rag import load_vector_db
 import os
 from dotenv import load_dotenv
 
-# Load env variables
 load_dotenv()
-d#ef get_answer(query):
-    #return "This is test response"
 
+USE_OPENAI = os.getenv("OPENAI_API_KEY") is not None
+
+if USE_OPENAI:
+    from langchain_openai import ChatOpenAI
+
+    llm = ChatOpenAI(
+        model="gpt-4o-mini",
+        api_key=os.getenv("OPENAI_API_KEY")
+    )
+
+def local_answer(query):
+    query = query.lower()
+
+    if "hello" in query:
+        return "Hello! Kem cho? 😊"
+
+    elif "ai" in query:
+        return "AI is artificial intelligence 🤖"
+
+    return "This is a fallback response (no API key)."
 
 def get_answer(query):
     try:
-         return "This is test response"
-        # Load DB inside function (important)
-        db = load_vector_db()
-        api_key=os.getenv("OPENAI_API_KEY")
-        print("API KEY:", api_key)
-        print(get_answer(query))            
-
-        # Initialize LLM
-        llm = ChatOpenAI(
-            model="gpt-4o-mini",
-            api_key=api_key
-        )
-        # Search similar docs
-        docs = db.similarity_search(query)
-
-        # Safe context join
-        context = " ".join([doc.page_content for doc in docs]) if docs else "No data found"
-
-        prompt = f"""
-        Answer based on context:
-        {context}
-
-        Question: {query}
-        """
-
-        response = llm.invoke(prompt)
-
-        return response.content
+        if USE_OPENAI:
+            response = llm.invoke(query)
+            return response.content
+        else:
+            return local_answer(query)
 
     except Exception as e:
-=======
-from langchain_openai import ChatOpenAI
-from rag import load_vector_db
-import os
-from dotenv import load_dotenv
-
-# Load env variables
-load_dotenv()
-d#ef get_answer(query):
-    #return "This is test response"
-
-
-def get_answer(query):
-    try:
-         return "This is test response"
-        # Load DB inside function (important)
-        db = load_vector_db()
-        api_key=os.getenv("OPENAI_API_KEY")
-        print("API KEY:", api_key)
-        print(get_answer(query))            
-
-        # Initialize LLM
-        llm = ChatOpenAI(
-            model="gpt-4o-mini",
-            api_key=api_key
-        )
-        # Search similar docs
-        docs = db.similarity_search(query)
-
-        # Safe context join
-        context = " ".join([doc.page_content for doc in docs]) if docs else "No data found"
-
-        prompt = f"""
-        Answer based on context:
-        {context}
-
-        Question: {query}
-        """
-
-        response = llm.invoke(prompt)
-
-        return response.content
-
-    except Exception as e:
->>>>>>> b743e97ac53eed842df7b2eb242dd75461ff4ca1
-        return f"Error: {str(e)}"
+        return local_answer(query)
