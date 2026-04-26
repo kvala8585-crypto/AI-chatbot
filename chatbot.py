@@ -1,20 +1,22 @@
 import os
 from dotenv import load_dotenv
-from google import genai   # ✅ NEW package
+import google.generativeai as genai
 
+# Load env variables
 load_dotenv()
 
-# 🔑 API key (correct name use kar)
+# 🔑 API key load karo (FIRST)
 API_KEY = os.getenv("GEMINI_API_KEY")
-
 
 USE_AI = API_KEY is not None
 print("USE_AI:", USE_AI)
 
 # 🤖 Gemini setup
 if USE_AI:
-    client = genai.Client(api_key=API_KEY)
+    genai.configure(api_key=API_KEY)
+    model = genai.GenerativeModel("gemini-1.5-flash")
 
+# 🔹 Local fallback
 def local_answer(query):
     query = query.lower()
 
@@ -25,13 +27,11 @@ def local_answer(query):
 
     return "Fallback response"
 
+# 🔹 Main function
 def get_answer(query):
     try:
         if USE_AI:
-            response = client.models.generate_content(
-                model="gemini-1.5-flash",
-                contents=query
-            )
+            response = model.generate_content(query)
             return response.text
         else:
             return local_answer(query)
