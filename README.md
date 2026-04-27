@@ -1,311 +1,162 @@
-
 # 🤖 AI Chatbot Automation System
 
 ## 📌 Project Overview
 
 This project is an end-to-end **AI-powered chatbot automation system** built using FastAPI.
-It can handle user queries, generate AI-based responses, store logs, and optionally send automated email replies.
 
-The system is designed with a scalable architecture and can be integrated with automation tools like Zapier or n8n for real-world workflows.
+It is capable of handling real-time user queries, generating AI-based responses, storing interactions in a database, and optionally triggering automated email replies.
 
-
-
-## 🚀 Features
-
-* 💬 AI-based chatbot response system
-* ⚡ FastAPI backend (high performance APIs)
-* 🗂️ Query & response logging (database)
-* 📧 Optional email automation
-* 🔗 Ready for Zapier / n8n integration
-* ☁️ Deployable on cloud platforms (Render / Railway)
+The system is designed with a **scalable backend architecture** and can be integrated with automation platforms like Zapier and n8n for real-world business workflows.
 
 ---
 
-## Tech Stack
+## 🌐 Live Demo
 
-* **Backend:** FastAPI
-* **Language:** Python
-* **Database:** SQLite
-* **API Handling:** Uvicorn
-* **Automation (Optional):** Zapier / n8n
-* **Deployment:** Render
+🚀 **Deployed on:** :contentReference[oaicite:0]{index=0}  
+🔗 **Live API URL:** https://ai-chatbot-5-m89t.onrender.com  
+
+👉 Open the link in browser to verify service status  
+👉 Use API tools (Postman / frontend) to test `/chat` endpoint  
+
+---
+
+## 🚀 Features
+
+* 💬 AI-powered chatbot response system  
+* ⚡ High-performance FastAPI backend  
+* 🗂️ Query & response logging using database  
+* 📧 Optional automated email responses  
+* 🔗 Ready for Zapier / n8n integration  
+* ☁️ Cloud deployment support (Render / Railway)  
+
+---
+
+## 🛠️ Tech Stack
+
+* **Backend:** FastAPI  
+* **Language:** Python  
+* **Database:** SQLite  
+* **Server:** Uvicorn  
+* **Automation:** Zapier / n8n (optional)  
+* **Deployment:** Render  
 
 ---
 
 ## 📁 Project Structure
-
-```
 AI Chatbot/
 │
-├── app.py                # Main FastAPI application
-├── chatbot.py            # AI response logic
-├── database.py           # Database operations
-├── email_service.py      # Email automation logic
-├── requirements.txt      # Project dependencies
-├── Procfile              # Deployment configuration
-├── .gitignore            # Ignore sensitive files
-```
+├── app.py # Main FastAPI application
+├── chatbot.py # AI response logic
+├── database.py # Database operations
+├── email_service.py # Email automation logic
+├── requirements.txt # Dependencies
+├── Procfile # Deployment config
+├── .gitignore # Ignore sensitive files
 
 ---
 
 ## ⚙️ Installation & Setup
 
-### 1. Clone the repository
-
-```
+### 1️⃣ Clone Repository
 git clone https://github.com/yourusername/yourrepo.git
+
 cd AI Chatbot
-```
 
-### 2. Install dependencies
 
-```
+### 2️⃣ Install Dependencies
 pip install -r requirements.txt
-```
 
-### 3. Setup environment variables
 
-Create a `.env` file:
+
+### 3️⃣ Setup Environment Variables
 
 
 ---
 
-## ▶️ Run the Application
-
-```
+## ▶️ Run Locally
 uvicorn app:app --reload
-```
 
 
 ---
 
 ## 🔌 API Endpoints
 
-### 🔹 Home
-
-```
+### 🔹 Health Check
 GET /
-```
 
-Returns status message.
+✅ Returns service status  
+Example:
+
+{
+"message": "AI Chatbot Running 🚀"
+}
+
+---
 
 ### 🔹 Chat Endpoint
-
-```
 POST /chat/
-```
 
-**Query Parameters:**
 
-* `query` (string) → User input
-* `email` (optional) → For email response
+#### Parameters:
 
-**Example Response:**
+* `query` → User input (required)  
+* `email` → Optional (for automated email response)
 
-```
-{
-  "query": "Hello",
-  "response": "AI generated response"
-}
-```
+#### Example Response:
+
+
+
 
 ---
 
 ## 🔄 Automation Integration
 
-This project can be integrated with:
+This system supports integration with:
 
-* Zapier (Webhook → API → Email automation)
-* n8n (Workflow automation)
+* Zapier  
+* n8n  
 
-**Flow:**
-User → Automation Tool → API → AI → Database → Email
+### 🔁 Workflow:
 
----
-
-## ☁️ Deployment (Render)
-
-* Upload code to GitHub
-* Connect repository to Render
-* Add environment variables
-* Deploy as Web Service
+User → Automation Tool → API → AI Processing → Database → Email Response  
 
 ---
 
+## ☁️ Deployment
 
----
+The project is deployed using :contentReference[oaicite:1]{index=1} as a Web Service.
 
-## 💼 Use Cases
+### Steps:
 
-* Customer support chatbot
-* Automated email responder
-* Lead generation system
-* AI-based query handling
-
----
-
-## 👨‍💻 Author
-
-**Kavi Vala**
-AI/ML Enthusiast | Data Science Projects
-
----
-
-## ⭐ Future Improvements
-
-=======
-# 🤖 AI Chatbot Automation System
-
-## 📌 Project Overview
-
-This project is an end-to-end **AI-powered chatbot automation system** built using FastAPI.
-It can handle user queries, generate AI-based responses, store logs, and optionally send automated email replies.
-
-The system is designed with a scalable architecture and can be integrated with automation tools like Zapier or n8n for real-world workflows.
-
-
-
-## 🚀 Features
-
-* 💬 AI-based chatbot response system
-* ⚡ FastAPI backend (high performance APIs)
-* 🗂️ Query & response logging (database)
-* 📧 Optional email automation
-* 🔗 Ready for Zapier / n8n integration
-* ☁️ Deployable on cloud platforms (Render / Railway)
-
----
-
-## Tech Stack
-
-* **Backend:** FastAPI
-* **Language:** Python
-* **Database:** SQLite
-* **API Handling:** Uvicorn
-* **Automation (Optional):** Zapier / n8n
-* **Deployment:** Render
-
----
-
-## 📁 Project Structure
-
-```
-AI Chatbot/
-│
-├── app.py                # Main FastAPI application
-├── chatbot.py            # AI response logic
-├── database.py           # Database operations
-├── email_service.py      # Email automation logic
-├── requirements.txt      # Project dependencies
-├── Procfile              # Deployment configuration
-├── .gitignore            # Ignore sensitive files
-```
-
----
-
-## ⚙️ Installation & Setup
-
-### 1. Clone the repository
-
-```
-git clone https://github.com/yourusername/yourrepo.git
-cd AI Chatbot
-```
-
-### 2. Install dependencies
-
-```
-pip install -r requirements.txt
-```
-
-### 3. Setup environment variables
-
-Create a `.env` file:
-
-
----
-
-## ▶️ Run the Application
-
-```
-uvicorn app:app --reload
-```
-
-
----
-
-## 🔌 API Endpoints
-
-### 🔹 Home
-
-```
-GET /
-```
-
-Returns status message.
-
-### 🔹 Chat Endpoint
-
-```
-POST /chat/
-```
-
-**Query Parameters:**
-
-* `query` (string) → User input
-* `email` (optional) → For email response
-
-**Example Response:**
-
-```
-{
-  "query": "Hello",
-  "response": "AI generated response"
-}
-```
-
----
-
-## 🔄 Automation Integration
-
-This project can be integrated with:
-
-* Zapier (Webhook → API → Email automation)
-* n8n (Workflow automation)
-
-**Flow:**
-User → Automation Tool → API → AI → Database → Email
-
----
-
-## ☁️ Deployment (Render)
-
-* Upload code to GitHub
-* Connect repository to Render
-* Add environment variables
-* Deploy as Web Service
-
----
-
+1. Push code to GitHub  
+2. Connect repository to Render  
+3. Configure environment variables  
+4. Deploy using Uvicorn server  
 
 ---
 
 ## 💼 Use Cases
 
-* Customer support chatbot
-* Automated email responder
-* Lead generation system
-* AI-based query handling
+* Customer Support Chatbot  
+* Automated Email Responder  
+* Lead Generation System  
+* AI-based Query Handling  
 
 ---
 
 ## 👨‍💻 Author
 
-**Kavi Vala**
-AI/ML Enthusiast | Data Science Projects
+**Kavi Vala**  
+AI automation | Data Science Project  
 
 ---
 
 ## ⭐ Future Improvements
 
->>>>>>> b743e97ac53eed842df7b2eb242dd75461ff4ca1
+* Add frontend UI (React / HTML)  
+* Enhance conversation memory  
+* Multi-language support  
+* Authentication & user sessions  
+* Deploy full-stack version  
+
+---
