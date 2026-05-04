@@ -44,6 +44,6 @@ def load_vector_db():
     )
 
 
-# 👉 First time run karva mate
+#  First time run karva mate
 if __name__ == "__main__":
     create_vector_db()
