@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from chatbot import get_answer   # ✅ AI + fallback already handled here
+from chatbot import get_answer   #  AI + fallback already handled here
 
 app = FastAPI()
 
