@@ -1,6 +1,6 @@
-# 🤖 AI Chatbot Automation System
+#  AI Chatbot Automation System
 
-## 📌 Project Overview
+##  Project Overview
 
 This project is an end-to-end **AI-powered chatbot automation system** built using FastAPI.
 
@@ -10,39 +10,39 @@ The system is designed with a **scalable backend architecture** and can be integ
 
 ---
 
-## 🌐 Live Demo
+##  Live Demo
 
-🚀 **Deployed on:** :contentReference[oaicite:0]{index=0}  
-🔗 **Live API URL:** https://ai-chatbot-5-m89t.onrender.com  
+ **Deployed on:** :Render 
+ **Live API URL:** https://ai-chatbot-5-m89t.onrender.com/
 
 👉 Open the link in browser to verify service status  
 👉 Use API tools (Postman / frontend) to test `/chat` endpoint  
 
 ---
 
-## 🚀 Features
+##  Features
 
-* 💬 AI-powered chatbot response system  
-* ⚡ High-performance FastAPI backend  
-* 🗂️ Query & response logging using database  
-* 📧 Optional automated email responses  
-* 🔗 Ready for Zapier / n8n integration  
-* ☁️ Cloud deployment support (Render / Railway)  
+* AI-powered chatbot response system  
+*  High-performance FastAPI backend  
+*  Query & response logging using database  
+*  Optional automated email responses  
+*  Ready for Zapier / n8n integration  
+*  Cloud deployment support (Render / Railway)  
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 * **Backend:** FastAPI  
 * **Language:** Python  
 * **Database:** SQLite  
 * **Server:** Uvicorn  
-* **Automation:** Zapier / n8n (optional)  
+* **Automation:** n8n 
 * **Deployment:** Render  
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 AI Chatbot/
 │
 ├── app.py # Main FastAPI application
@@ -55,33 +55,31 @@ AI Chatbot/
 
 ---
 
-## ⚙️ Installation & Setup
+## Installation & Setup
 
-### 1️⃣ Clone Repository
-git clone https://github.com/yourusername/yourrepo.git
+### Clone Repository
+https://github.com/kvala8585-crypto/AI-chatbot/edit/main/README.md
 
 cd AI Chatbot
 
 
-### 2️⃣ Install Dependencies
+###  Install Dependencies
 pip install -r requirements.txt
 
 
 
-### 3️⃣ Setup Environment Variables
+###  Setup Environment Variables
 
 
 ---
 
-## ▶️ Run Locally
+## Run Locally
 uvicorn app:app --reload
 
 
----
+##  API Endpoints
 
-## 🔌 API Endpoints
-
-### 🔹 Health Check
+###  Health Check
 GET /
 
 ✅ Returns service status  
@@ -93,7 +91,7 @@ Example:
 
 ---
 
-### 🔹 Chat Endpoint
+###  Chat Endpoint
 POST /chat/
 
 
@@ -102,29 +100,18 @@ POST /chat/
 * `query` → User input (required)  
 * `email` → Optional (for automated email response)
 
-#### Example Response:
 
-
-
-
----
-
-## 🔄 Automation Integration
+## Automation Integration
 
 This system supports integration with:
 
-* Zapier  
 * n8n  
 
-### 🔁 Workflow:
+###  Workflow:
 
 User → Automation Tool → API → AI Processing → Database → Email Response  
 
 ---
-
-## ☁️ Deployment
-
-The project is deployed using :contentReference[oaicite:1]{index=1} as a Web Service.
 
 ### Steps:
 
@@ -133,9 +120,7 @@ The project is deployed using :contentReference[oaicite:1]{index=1} as a Web Ser
 3. Configure environment variables  
 4. Deploy using Uvicorn server  
 
----
-
-## 💼 Use Cases
+## Use Cases
 
 * Customer Support Chatbot  
 * Automated Email Responder  
@@ -144,14 +129,12 @@ The project is deployed using :contentReference[oaicite:1]{index=1} as a Web Ser
 
 ---
 
-## 👨‍💻 Author
+##  Author
 
-**Kavi Vala**  
-AI automation | Data Science Project  
+Kavi Vala 
+AI automation  
 
----
-
-## ⭐ Future Improvements
+## Future Improvements
 
 * Add frontend UI (React / HTML)  
 * Enhance conversation memory  
